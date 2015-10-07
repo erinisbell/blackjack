@@ -48,7 +48,7 @@ pair = {
 	"8"   => { "2" =>  p,  "3" =>  p,  "4" =>  p,  "5" =>  p,  "6" =>  p,  "7" =>  p,  "8" =>  p,  "9" =>  p,  "10" =>  p,  "A" =>  p},
 	"9"   => { "2" =>  p,  "3" =>  p,  "4" =>  p,  "5" =>  p,  "6" =>  p,  "7" =>  s,  "8" =>  p,  "9" =>  p,  "10" =>  s,  "A" =>  s},
 	"10" => { "2" =>  s,  "3" =>  s,  "4" =>  s,  "5" =>  s,  "6" =>  s,  "7" =>  s,  "8" =>  s,  "9" =>  s,  "10" =>  s,  "A" =>  s},
-	"A,A"   => { "2" =>  p,  "3" =>  p,  "4" =>  p,  "5" =>  p,  "6" =>  p,  "7" =>  p,  "8" =>  p,  "9" =>  p,  "10" =>  p,  "A" =>  p},
+	"A"   => { "2" =>  p,  "3" =>  p,  "4" =>  p,  "5" =>  p,  "6" =>  p,  "7" =>  p,  "8" =>  p,  "9" =>  p,  "10" =>  p,  "A" =>  p},
 }
 
 face = {
@@ -70,42 +70,15 @@ dealer_card = gets.chomp.to_s
 
 
 if first_card == second_card 
-	puts pair["#{first_card.to_i}"]["#{dealer_card}"]
+	puts pair[first_card][dealer_card]
 end
 
 
 if first_card!= "A" && second_card!= "A"
-	 puts hard["#{first_card.to_i}"]["#{dealer_card}"]
-elsif first_card == "A" && second_card== "A"
-	puts soft["#{first_card.to_i}"]["#{dealer_card}"]
+	 puts hard[first_card][dealer_card]
+elsif first_card == "A" || second_card== "A"
+	puts soft[first_card][dealer_card]
  end
-
-
-
-
-
-
-
-
-
-
-
-
-#if first_card != second_card & include?"A"
-#				move = ""
-#				hard.each do |yhand, dcard|
-# 				dcard.each do |dvalue, advice|
-#				end
-#			elsif first_card != second && = include"A"
-#				move = ""
-#				soft.each do |yhand, dcard|
-
-
-#no pairs, no ace go to hard
-#no pairs but ace go to soft 
-#["2,2"]["3"]
-#dcard.each do |dvalue, advice|
-
 
 
 
